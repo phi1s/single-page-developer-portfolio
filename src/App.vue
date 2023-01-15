@@ -76,6 +76,11 @@ button:hover {
   color: #4ee1a0;
 }
 
+.icons > img:hover {
+  filter: invert(77%) sepia(56%) saturate(455%) hue-rotate(93deg)
+    brightness(92%) contrast(90%);
+}
+
 span {
   border-bottom: 4px solid #4ee1a0;
 }

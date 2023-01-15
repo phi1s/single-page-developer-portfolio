@@ -14,6 +14,30 @@
         </div>
       </div>
     </header>
+    <div class="background">
+      <img
+        src="../assets/images/pattern-circle.svg"
+        alt="Pattern Circle"
+        class="pattern-circle"
+      />
+      <div>
+        <img
+          src="../assets/images/pattern-rings.svg"
+          alt="Pattern Rings"
+          class="pattern-rings"
+        />
+        <img
+          src="../assets/images/pattern-rings.svg"
+          alt="Pattern Rings"
+          class="pattern-rings"
+        />
+        <img
+          src="../assets/images/pattern-rings.svg"
+          alt="Pattern Rings"
+          class="pattern-rings"
+        />
+      </div>
+    </div>
 
     <div class="hero">
       <div class="image-profile" />
@@ -143,7 +167,7 @@
       <form>
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="E-Mail" />
-        <input type="text" placeholder="Message" />
+        <textarea type="text" placeholder="Message" />
         <button>Send message</button>
       </form>
       <hr />
@@ -172,6 +196,29 @@ export default {
 </script>
 
 <style scoped>
+.pattern-circle {
+  position: absolute;
+  top: 254px;
+  right: -60px;
+}
+.pattern-rings {
+  position: absolute;
+  width: 530px;
+  height: 129px;
+}
+.pattern-rings:nth-child(1) {
+  top: 124px;
+  left: -350px;
+}
+.pattern-rings:nth-child(2) {
+  top: 1515px;
+  right: -350px;
+}
+.pattern-rings:nth-child(3) {
+  bottom: 140px;
+  left: -350px;
+}
+
 header {
   position: absolute;
   width: 100vw;
@@ -256,14 +303,38 @@ ul {
   padding: 60px 16px;
 }
 input {
-  color: black;
-  width: 100%;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.222222px;
+  mix-blend-mode: normal;
+  width: calc(100% - 32px);
   height: 43px;
   margin: 16px 0px;
-  background-color: white;
+  padding-left: 24px;
+  background-color: transparent;
   border: none;
+  border-bottom: 1px solid white;
+  text-transform: uppercase;
 }
-
+textarea {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.222222px;
+  mix-blend-mode: normal;
+  width: calc(100% - 32px);
+  height: 43px;
+  margin: 16px 0px;
+  padding-left: 24px;
+  padding-bottom: 80px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  text-transform: uppercase;
+}
 footer {
   background-color: #242424;
   width: 100%;
