@@ -41,17 +41,23 @@
       </div>
 
       <div class="hero">
-        <div class="image-profile" />
+        <div class="image-profile">
+          <img
+            src="../assets/images/pattern-circle.svg"
+            alt="Pattern Circle"
+            class="pattern-circle-desktop"
+          />
+        </div>
         <div class="hero-text">
           <h1>Nice to meet you! I'm <span>Adam Keyes</span>.</h1>
           <p>
             Based in the UK, I'm a front-end developer passionate about building
             accessible web apps that users love.
           </p>
+          <button>Contact me</button>
         </div>
-        <button>Contact me</button>
-        <hr />
       </div>
+      <hr />
       <div class="stack">
         <ul>
           <li>
@@ -80,7 +86,7 @@
           </li>
         </ul>
       </div>
-      <hr />
+      <hr class="hr-projects" />
       <div class="projects">
         <div class="inline">
           <h1>Projects</h1>
@@ -89,6 +95,12 @@
         <ul>
           <li>
             <div class="thumbnail-project" id="tp1" />
+            <div class="overlay">
+              <div class="learn-more-overlay">
+                <button>View Project</button><br />
+                <button>View Code</button>
+              </div>
+            </div>
             <h3>Design portfolio</h3>
             <ul>
               <li>HTML</li>
@@ -100,6 +112,12 @@
           </li>
           <li>
             <div class="thumbnail-project" id="tp2" />
+            <div class="overlay">
+              <div class="learn-more-overlay">
+                <button>View Project</button><br />
+                <button>View Code</button>
+              </div>
+            </div>
             <h3>E-learning landing page</h3>
             <ul>
               <li>HTML</li>
@@ -111,6 +129,12 @@
           </li>
           <li>
             <div class="thumbnail-project" id="tp3" />
+            <div class="overlay">
+              <div class="learn-more-overlay">
+                <button>View Project</button><br />
+                <button>View Code</button>
+              </div>
+            </div>
             <h3>Todo web app</h3>
             <ul>
               <li>HTML</li>
@@ -123,6 +147,12 @@
           </li>
           <li>
             <div class="thumbnail-project" id="tp4" />
+            <div class="overlay">
+              <div class="learn-more-overlay">
+                <button>View Project</button><br />
+                <button>View Code</button>
+              </div>
+            </div>
             <h3>Entertainment web app</h3>
             <ul>
               <li>HTML</li>
@@ -135,6 +165,12 @@
           </li>
           <li>
             <div class="thumbnail-project" id="tp5" />
+            <div class="overlay">
+              <div class="learn-more-overlay">
+                <button>View Project</button><br />
+                <button>View Code</button>
+              </div>
+            </div>
             <h3>Memory Game</h3>
             <ul>
               <li>HTML</li>
@@ -147,6 +183,12 @@
           </li>
           <li>
             <div class="thumbnail-project" id="tp6" />
+            <div class="overlay">
+              <div class="learn-more-overlay">
+                <button>View Project</button><br />
+                <button>View Code</button>
+              </div>
+            </div>
             <h3>Art gallery showcase</h3>
             <ul>
               <li>HTML</li>
@@ -162,15 +204,16 @@
     </div>
     <div class="contact">
       <div class="contact-text">
-        <h1>Contact</h1>
-        <p>
-          I would love to hear about your project and how I could help. Please
-          fill in the form, and I'll get back to you as soon as possible.
-        </p>
+        <div>
+          <h1>Contact</h1>
+          <p>
+            I would love to hear about your project and how I could help. Please
+            fill in the form, and I'll get back to you as soon as possible.
+          </p>
+        </div>
         <ContactForm />
-
-        <hr class="hr-bottom" />
       </div>
+      <hr class="hr-bottom" />
     </div>
     <footer>
       <div>
@@ -225,6 +268,10 @@ export default {
   position: absolute;
   top: 254px;
   right: -60px;
+}
+
+.pattern-circle-desktop {
+  display: none;
 }
 .pattern-rings {
   position: absolute;
@@ -348,10 +395,12 @@ footer {
   }
   header {
     width: calc(100vw - 60px);
+    max-width: 1110px;
     z-index: 1;
   }
   header > div {
     width: 100%;
+    max-width: 1110px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -390,13 +439,16 @@ footer {
   .stack > ul > li {
     width: 50%;
   }
+  .hr-projects {
+    display: none;
+  }
   .projects > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   .projects > ul > li {
-    width: calc(50%-12px);
+    width: 342px;
   }
   .contact {
     display: flex;
@@ -420,8 +472,110 @@ footer {
     position: absolute;
     width: calc(100vw - 60px);
     left: 15px;
+    bottom: 50px;
   }
 }
 @media screen and (min-width: 1200px) {
+  .container {
+    width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header > div {
+    margin: 0;
+    max-width: 1110px;
+  }
+  .hero {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-top: 0;
+    margin-top: -30px;
+  }
+  .image-profile {
+    width: 445px;
+    height: 720px;
+    background-image: url("../assets/images/image-profile-desktop.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0;
+  }
+
+  .hero-text {
+    width: 445px;
+    margin-top: 130px;
+  }
+  .hero-text > h1 {
+    width: 800px;
+  }
+  .pattern-circle {
+    display: none;
+  }
+  .pattern-circle-desktop {
+    display: block;
+    margin-top: 530px;
+    margin-left: -60px;
+  }
+  .pattern-rings:nth-child(1) {
+    top: 124px;
+    left: -150px;
+  }
+  .icons {
+    margin-right: 30px;
+  }
+  .projects > ul > li {
+    width: 530px;
+    margin-bottom: 60px;
+  }
+  .thumbnail-project {
+    height: 400px;
+  }
+  .learn-more {
+    display: none;
+  }
+  .overlay {
+    position: absolute;
+    margin-top: -400px;
+    width: 530px;
+    height: 400px;
+    background-color: #000000;
+    opacity: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .learn-more-overlay {
+    display: block;
+    text-align: center;
+  }
+  .learn-more-overlay > button {
+    margin: 20px;
+  }
+  .overlay:hover {
+    opacity: 0.75;
+  }
+  .contact-text {
+    text-align: left;
+    width: 1110px;
+    max-width: 1110px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact-text > div {
+    width: 445px;
+  }
+
+  .hr-bottom {
+    width: 1110px;
+    left: auto;
+  }
+
+  footer > div {
+    margin: 0;
+    width: 1110px;
+  }
 }
 </style>
